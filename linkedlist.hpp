@@ -1,8 +1,7 @@
 /*
 Author: Tyrel Cadogan
 Email: shaqc777yahoo.com
-
-floats Linked list implementation 
+Linked list implementation (floats)
 */
 #include <iostream>
 
@@ -14,13 +13,14 @@ class LinkedList{
     private: 
         node *head, *tail;
     public:
-        LinkedList();
-        void addNodeToEnd(float input);
-        void addBetween(int first, int second, float input);
-        void deleteNode(int index);
-        void addNodeToStart(float input);
-        void printList();
-        float getElement(int index);
+        LinkedList();//Done
+        void addNodeAtIndex(int index, float input);
+        void addNodeToEnd(float input);//Done
+        void addBetween(int first, int second, float input);//Done
+        void deleteNodeI(int index);//Done
+        void addNodeToStart(float input);//Done
+        void printList();//Done
+        float getElement(int index);//Done
 };
 LinkedList::LinkedList(){
     /*Constructor*/
@@ -29,7 +29,7 @@ LinkedList::LinkedList(){
 }
 void LinkedList::addNodeToEnd(float input){
     /*
-    Add Elementwith data value "input" to the end of the linkedlist
+    Add Element with data value "input" to the end of the linkedlist
     */
     node *tmp = new node;
     tmp->val = input;
@@ -41,6 +41,27 @@ void LinkedList::addNodeToEnd(float input){
     else{
         tail->next = tmp;
         tail = tail->next; 
+    }
+}
+void LinkedList::addNodeToStart(float input){
+    node *tmp = new node;
+    tmp->val = input;
+    tmp->next= head;
+    head = tmp;
+}
+void LinkedList::addNodeAtIndex(int index, float input){
+    node *tmp = new node; tmp->val = input;
+    node *seeker = head; node * behind = NULL;
+    int i = 0; 
+    while(seeker != NULL){
+        if (i == index ){
+            seeker = behind->next;
+            behind->next = tmp;
+            tmp->next = seeker;
+            break;
+        }
+        behind = seeker;
+        seeker = seeker->next;
     }
 }
 void LinkedList::printList(){
@@ -58,7 +79,6 @@ void LinkedList::printList(){
     }
     std::cout<<" ]"<< std::endl;
 }
-
 float LinkedList::getElement(int index){
     /*
     Gets element at the specified index
@@ -78,5 +98,24 @@ float LinkedList::getElement(int index){
     }
     return 0;
 }
-
+void LinkedList::deleteNodeI(int index){
+    /*
+    Deletes a node at the specified index.
+    */
+    node *seeker = head;
+    node *behind = NULL;
+    int i = 0;
+    while (seeker != NULL)
+    {
+        if(i == index){
+            seeker = behind->next;
+            behind->next = seeker->next;
+            delete seeker;
+            break;
+        }
+        behind = seeker;
+        seeker = seeker->next;
+        i = i+1;
+    }
+}
 
