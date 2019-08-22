@@ -16,9 +16,10 @@ class LinkedList{
         LinkedList();//Done
         void addNodeAtIndex(int index, float input);
         void addNodeToEnd(float input);//Done
-        void addBetween(int first, int second, float input);//Done
-        void deleteNodeI(int index);//Done
         void addNodeToStart(float input);//Done
+        void deleteNodeI(int index);//Done
+        void deledeHead();
+        int len();
         void printList();//Done
         float getElement(int index);//Done
 };
@@ -49,7 +50,11 @@ void LinkedList::addNodeToStart(float input){
     tmp->next= head;
     head = tmp;
 }
+
 void LinkedList::addNodeAtIndex(int index, float input){
+    /*
+    Add node(element) to the position of thspecified index
+    */
     node *tmp = new node; tmp->val = input;
     node *seeker = head; node * behind = NULL;
     int i = 0; 
@@ -62,8 +67,10 @@ void LinkedList::addNodeAtIndex(int index, float input){
         }
         behind = seeker;
         seeker = seeker->next;
+        i = i +1;
     }
 }
+
 void LinkedList::printList(){
     /*
     Prints all elements in the list
@@ -98,6 +105,7 @@ float LinkedList::getElement(int index){
     }
     return 0;
 }
+
 void LinkedList::deleteNodeI(int index){
     /*
     Deletes a node at the specified index.
@@ -119,3 +127,4 @@ void LinkedList::deleteNodeI(int index){
     }
 }
 
+void LinkedList::deleteAtstart():
