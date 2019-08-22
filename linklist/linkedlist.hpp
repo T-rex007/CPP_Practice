@@ -18,7 +18,7 @@ class LinkedList{
         void addNodeToEnd(float input);//Done
         void addNodeToStart(float input);//Done
         void deleteNodeI(int index);//Done
-        void deledeHead();
+        void deleteHead();
         int len();
         void printList();//Done
         float getElement(int index);//Done
@@ -127,4 +127,19 @@ void LinkedList::deleteNodeI(int index){
     }
 }
 
-void LinkedList::deleteAtstart():
+void LinkedList::deleteHead(){
+    // Deletes the head of the linked list
+    node *tmp =  head; head = tmp->next; delete tmp;
+}
+
+int LinkedList::len(){
+    /*
+    Returns the lenght of the Linkedlist(NUmber of nodes in the list)
+    */
+    node *seeker = NULL; int i = 0;
+    while(seeker != NULL){
+        seeker = seeker->next;
+        i = i + 1;
+        }
+    return i + 1;
+}
