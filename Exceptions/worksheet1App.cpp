@@ -7,8 +7,9 @@ int main() {
     
     while(x != 5){
         try{
+            std::cout<<std::endl;
             std::cout<<"Square: 1, Rectangle 2, Triangle 3 and  Circle 4"<< std::endl;
-            std::cout << "Please enter an integer between 1 and 4 to choose operation and 5 to end program : ";
+            std::cout << "Please enter an integer between 1 and 4 to choose operation Or 5 to end program : ";
             std::cin >> x;
             //x = atof(argv[1]);
 
@@ -48,6 +49,7 @@ int main() {
                     area = 3.14*r*r;
                     std::cout << "Area of Circle: " << area << std::endl;
                     break;
+                std::cout<<std::endl;
             }
         }
         catch(...){

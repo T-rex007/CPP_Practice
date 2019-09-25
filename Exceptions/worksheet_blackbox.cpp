@@ -8,6 +8,7 @@ int main(int argc, const char* argv[]) {
    
           
     try{
+        std::cout << "Please enter an integer between 1 and 4 to choose operation Or 5 to end program : ";
         std::cout << "Please enter an integer between 1 and 3: ";
 
         x = atof(argv[1]);
