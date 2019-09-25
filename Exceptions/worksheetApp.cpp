@@ -4,15 +4,13 @@ float a, b, r, area;
 
 int main() {
     int x = 0;
-    std::cin >> x;
+    
     while(x != 5){
         try{
-          
-            std::cout << "Please enter an integer between 1 and 3: ";
+            std::cout<<"Square: 1, Rectangle 2, Triangle 3 and  Circle 4"<< std::endl;
+            std::cout << "Please enter an integer between 1 and 4 to choose operation and 5 to end program : ";
             std::cin >> x;
-
             //x = atof(argv[1]);
-
 
             switch (x)
             {
