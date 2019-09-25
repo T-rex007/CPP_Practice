@@ -9,7 +9,6 @@ int main(int argc, const char* argv[]) {
           
     try{
         std::cout << "Please enter an integer between 1 and 3: ";
-        std::cin >> x;
 
         x = atof(argv[1]);
 
